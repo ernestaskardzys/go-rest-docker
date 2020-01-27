@@ -26,6 +26,23 @@ $ docker build -t go-rest-docker .
 $ docker run -it -p 8080:8080 go-rest-docker
 ```
 
+To add the image to the public registry on Docker Hub, you need to execute the following:
+
+```bash
+$ docker tag go-rest-docker ernestaskardzys/go-rest-docker
+$ docker login
+# Enter username and password here
+$ docker push ernestaskardzys/go-rest-docker
+```
+
+## Kubernetes
+
+To run image on Kubernetes, please execute the following:
+
+```bash
+$ kubectl apply -f deployment.yml
+```
+
 # Testing
 
 To test the app, execute the following:
